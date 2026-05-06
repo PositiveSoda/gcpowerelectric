@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Candidatura - GcPowerElectric</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/d043d4ce2e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+<!-- NAVBAR UGUALE AL SITO -->
+<nav>
+  <div class="logo">
+    <img src="logo.jpg" alt="Logo">
+    <h1>GcPowerElectric</h1>
+  </div>
+
+  <div class="menu-toggle" id="menu-toggle">☰</div>
+
+  <div class="nav-links" id="nav-links">
+    <a href="index.html#home">Home</a>
+    <a href="index.html#chisiamo">Chi siamo</a>
+    <a href="index.html#servizi">Servizi</a>
+    <a href="index.html#galleria">Progetti</a>
+    <a href="index.html#contatti-wrapper">Contatti</a>
+  </div>
+</nav>
+
+<!-- CONTENUTO -->
+<section class="candidatura hidden">
+
+  <h2>Lavora con noi <i class="fa-solid fa-briefcase"></i></h2>
+  <p>Compila il form per inviare la tua candidatura.</p>
+
+  <form action="https://formspree.io/f/xrejlbla" method="POST">
+
+    <label>Nome e Cognome</label>
+    <input type="text" name="nome" required>
+
+    <label>Email</label>
+    <input type="email" name="email" required>
+
+    <label>Telefono</label>
+    <input type="tel" name="telefono">
+
+    <label>Esperienza</label>
+    <textarea name="esperienza" rows="4" placeholder="Descrivi la tua esperienza..."></textarea>
+
+    <label>Carica CV</label>
+    <input type="file">
+
+    <button type="submit">Invia candidatura</button>
+
+  </form>
+
+  <button onclick="window.location.href='index.html'">
+    Torna alla Home
+  </button>
+
+</section>
+<footer>
+  <p>© 2026 GcPowerElectric</p>
+
+  <a href="https://www.instagram.com/gcpower_electric?igsh=MW5kemtxc2R1em51Yw%3D%3D&utm_source=qr"
+     id="linkinsta"
+     target="_blank">
+
+    <i class="fa-brands fa-instagram"></i>
+  </a>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

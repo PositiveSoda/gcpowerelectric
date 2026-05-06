@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Richiedi Preventivo - GcPowerElectric</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/d043d4ce2e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+<!-- NAVBAR IDENTICA AL SITO PRINCIPALE -->
+<nav>
+  <div class="logo">
+    <img src="logo.jpg" alt="Logo">
+    <h1>GcPowerElectric</h1>
+  </div>
+
+  <div class="menu-toggle" id="menu-toggle">☰</div>
+
+  <div class="nav-links" id="nav-links">
+    <a href="index.html#home">Home</a>
+    <a href="index.html#chisiamo">Chi siamo</a>
+    <a href="index.html#servizi">Servizi</a>
+    <a href="index.html#galleria">Progetti</a>
+    <a href="index.html#preventivo">Preventivo</a>
+    <a href="index.html#contatti">Contatti</a>
+  </div>
+</nav>
+
+<!-- CONTENUTO PREVENTIVO -->
+<section class="preventivo-page hidden">
+
+  <h2>Richiedi Preventivo</h2>
+
+  <p>Compila il modulo e ti risponderemo il prima possibile.</p>
+
+  <form action="https://formspree.io/f/xrejlbla" method="POST">
+    <input type="text" placeholder="Nome e Cognome" name="nome" required>
+    <input type="email" placeholder="Email" name="email" required>
+    <input type="tel" placeholder="Telefono" name="telefono" required>
+    <textarea name="messaggio" placeholder="Descrivi il tuo progetto..." required></textarea>
+
+    <button type="submit">Invia richiesta</button>
+  </form>
+
+  <button onclick="window.location.href='index.html'">
+    Torna alla Home
+  </button>
+
+</section>
+
+<footer>
+  <p>© 2026 GcPowerElectric</p>
+
+  <a href="https://www.instagram.com/gcpower_electric?igsh=MW5kemtxc2R1em51Yw%3D%3D&utm_source=qr"
+     id="linkinsta"
+     target="_blank">
+
+    <i class="fa-brands fa-instagram"></i>
+  </a>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
