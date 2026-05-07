@@ -241,7 +241,7 @@ footer {
   }
 
   #imghome {
-    width: 400px;
+    width: 380px;
     height: 250px;
   }
 
@@ -374,6 +374,17 @@ footer {
   border: none;
   outline: none;
   text-decoration: none;
+  margin-top: 8px;
+  margin-right: 8px;
+}
+
+.fa-linkedin {
+  font-size: 30px;
+  color: lightblue;
+  border: none;
+  outline: none;
+  text-decoration: none;
+
 }
 #linkinsta {
   text-decoration: none;
