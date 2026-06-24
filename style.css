@@ -831,12 +831,9 @@ body.page-loaded {
 .card-images, img {
   width: 420px;
 }
-.services {
-  width: 100px;
-  margin: 0 auto;
-}
-.services, .card {
-  width: 10px;
+.gallery {
+  width: 400px;
+  margin-left: 23px;
 }
 
 }
@@ -905,4 +902,8 @@ body.page-loaded {
   object-fit: cover;
   border-radius: 10px;
   display: block;
+}
+
+#chisiamo, p {
+  text-align: center;
 }
