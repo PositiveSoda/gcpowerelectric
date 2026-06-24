@@ -824,6 +824,21 @@ body.page-loaded {
   .candidatura p {
     font-size: 14px;
   }
+
+.card-images {
+  width: 100%;
+}
+.card-images, img {
+  width: 420px;
+}
+.services {
+  width: 100px;
+  margin: 0 auto;
+}
+.services, .card {
+  width: 10px;
+}
+
 }
 
 .contact-box a {
