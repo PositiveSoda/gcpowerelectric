@@ -825,11 +825,8 @@ body.page-loaded {
     font-size: 14px;
   }
 
-.card-images {
-  width: 100%;
-}
-.card-images, img {
-  width: 420px;
+.card-images{
+  width: 384px;
 }
 .gallery {
   width: 400px;
