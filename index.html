@@ -1,173 +1,165 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GcPowerElectric</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://kit.fontawesome.com/d043d4ce2e.js" crossorigin="anonymous"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GC Power Electric – Quadri elettrici industriali</title>
+<meta name="description" content="GC Power Electric progetta e costruisce quadri elettrici industriali di bassa tensione e di automazione a Gela (CL).">
+<script>try{if(localStorage.getItem('gc-theme')==='dark')document.documentElement.setAttribute('data-theme','dark')}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+<header>
+ <div class="wrap nav">
+  <a class="brand" href="#home" aria-label="GC Power Electric – Home"><img src="data:image/jpeg;base64,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" alt="GC Power Electric"></a>
+  <button class="theme" aria-pressed="false" aria-label="Passa alla modalità scura"><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="currentColor"/></svg><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+  <button class="burger" aria-label="Apri il menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav id="nav" aria-label="Principale">
+   <ul>
+    <li><a href="#home">Home</a></li>
+    <li class="has-sub">
+     <button class="sub-btn" aria-expanded="false" aria-haspopup="true">Progetti<svg viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1.5l5 5 5-5"/></svg></button>
+     <div class="menu"><a href="#quadri-bt">Quadri BT</a><a href="#quadri-automazione">Quadri automazione</a><a href="#quadri-comando-pompa">Quadri comando pompa</a></div>
+    </li>
+    <li><a href="#chi-siamo">Chi siamo</a></li>
+    <li><a href="#brand">I nostri brand</a></li>
+    <li><a href="#contatti">Contattaci</a></li>
+    <li><a class="cta" href="#preventivi">Preventivi</a></li>
+   </ul>
+  </nav>
+ </div>
+</header>
 
-<nav>
-  <div class="logo">
-    <img src="logo.jpg" alt="Logo">
-    <h1>GcPowerElectric</h1>
+<main id="home-view">
+ <section class="hero" id="home">
+  <video class="hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+   <source src="VIDEO/HnVideoEditor_2026_11_20_114636798.mp4" type="video/mp4">
+  </video>
+  <div class="hero-shade"></div>
+  <div class="wrap">
+   <div>
+    <h1>Quadri elettrici industriali su misura, dal progetto al collaudo</h1>
+    <p>Bassa tensione, automazione e comando pompa: quadri realizzati con componenti dei principali marchi del settore.</p>
+    <div class="btns"><a class="btn btn-y" href="#preventivi">Richiedi un preventivo</a><a class="btn btn-o" href="#progetti">Guarda i progetti</a></div>
+   </div>
   </div>
+ </section>
 
-  <div class="menu-toggle" id="menu-toggle">☰</div>
-
-  <div class="nav-links" id="nav-links">
-    <a href="#home">Home</a>
-    <a href="#chisiamo">Chi siamo</a>
-    <a href="#servizi">Servizi</a>
-    <a href="#galleria">Progetti</a>
-    <a href="#preventivo">Preventivo</a>
-    <a href="#contatti">Contatti</a>
+ <section id="progetti">
+  <div class="wrap">
+   <h2 class="rv">I nostri progetti</h2>
+   <p class="lead rv">Una selezione dei quadri realizzati nel nostro laboratorio. Scegli la categoria per vedere la galleria.</p>
+   <div class="cards">
+    <a class="pcard rv" href="#quadri-bt"><div data-art="bt"></div><div class="txt"><h3>Quadri BT</h3><p>Distribuzione e protezione in bassa tensione per impianti industriali e civili.</p><span class="go">Vedi la galleria</span></div></a>
+    <a class="pcard rv" href="#quadri-automazione"><div data-art="auto"></div><div class="txt"><h3>Quadri automazione</h3><p>Controllo di macchine e processi con PLC, azionamenti e pannelli operatore.</p><span class="go">Vedi la galleria</span></div></a>
+    <a class="pcard rv" href="#quadri-comando-pompa"><div data-art="pump"></div><div class="txt"><h3>Quadri comando pompa</h3><p>Avviamento, protezione e controllo di pompe e impianti idrici.</p><span class="go">Vedi la galleria</span></div></a>
+   </div>
   </div>
-</nav>
+ </section>
 
-<section class="hero hidden" id="home">
-  <div>
-    
-    <h2>Soluzioni Professionali per Quadri Elettrici <i class="fa-solid fa-bolt"></i></h2>
-    <p>Progettazione, realizzazione e manutenzione di quadri elettrici <br>Automazione e distribuzione</p>
-    <img src="lampadinahome.jpg" id="imghome">
+ <section class="about" id="chi-siamo">
+  <div class="wrap">
+   <div class="rv">
+    <h2>Chi siamo</h2>
+    <p class="lead">GC Power Electric è un’azienda di Gela specializzata nella realizzazione di quadri elettrici industriali. Seguiamo ogni commessa in prima persona: studio dello schema, scelta dei componenti, assemblaggio in sede produttiva e collaudo finale.</p>
+    <p class="lead">Lavoriamo con i principali costruttori di apparecchiature elettriche per offrire quadri affidabili, ordinati e facili da manutenere.</p>
+   </div>
+   <div class="facts rv">
+    <div class="fact"><b>Su misura</b><span>Ogni quadro nasce dalle esigenze dell’impianto.</span></div>
+    <div class="fact"><b>Produzione propria</b><span>Assemblaggio nella nostra sede produttiva.</span></div>
+    <div class="fact"><b>Collaudo</b><span>Verifiche prima della consegna.</span></div>
+    <div class="fact"><b>Componenti di marca</b><span>Solo costruttori affermati.</span></div>
+   </div>
   </div>
-</section>
+ </section>
 
-<section id="chisiamo" class="hidden">
-  <h3>Chi Siamo <i class="fa-solid fa-check"></i></h3>
-  <p>
-    Siamo un partner affidabile nella progettazione e realizzazione di quadri elettrici per automazione e distribuzione, pensati per garantire continuità operativa, sicurezza e massime prestazioni. Offriamo soluzioni su misura che integrano tecnologie avanzate, ideali per ottimizzare i processi
-     produttivi e migliorare l’efficienza degli impianti.
-     La nostra azienda nasce recentemente, ma affonda le proprie radici in un’esperienza pluriennale nel settore dei quadri elettrici per automazione e distribuzione. Dopo anni di attività sul campo, abbiamo deciso di mettere a frutto competenze consolidate e passione per il nostro lavoro, dando vita a una realtà nuova, dinamica e orientata al cliente.
-     Realizziamo quadri elettrici su misura, progettati per garantire affidabilità, sicurezza e continuità operativa. Ogni soluzione è il risultato di un’attenta analisi tecnica, unita alla conoscenza diretta delle esigenze degli impianti industriali e dei processi produttivi.
-     a nostra forza è l’unione tra esperienza maturata negli anni e un approccio moderno, flessibile e preciso. Seguiamo ogni fase del lavoro, dalla progettazione al collaudo, con la massima cura dei dettagli e nel pieno rispetto delle normative vigenti.
-     Scegliere la nostra azienda significa affidarsi a un professionista che conosce profondamente il settore e che ha deciso di creare una realtà nuova basata su serietà, competenza e attenzione al cliente.
-  </p>
-</section>
-
-<section id="servizi" class="hidden">
-
-  <h3>I Nostri Servizi <i class="fa-brands fa-medapps"></i></h3>
-  <p id="paragrafoserv">
-    Utilizziamo componenti e soluzioni dei principali produttori industriali <br> per garantire affidabilità, continuità operativa e integrazione con gli standard di settore.
-  </p>
-
-  <div class="services">
-
-  <!-- CARD 1 -->
-  <div class="card">
-    
-
-    <div class="card-images">
-      <img src="IMG_4607.JPG" alt="">
-      <img src="IMG_4640.JPG" alt="">
-      <img src="IMG_4641.WEBP" alt="">
-      <img src="IMG_4696.png" alt="">
-    </div>
+ <section id="brand">
+  <div class="wrap">
+   <h2 class="rv">I nostri brand</h2>
+   <p class="lead rv">Realizziamo i quadri con apparecchiature dei principali costruttori del settore.</p>
+   <div class="brands">
+    <div class="brand-tile rv" style="color:#1f1f1f">BTicino</div>
+    <div class="brand-tile rv" style="color:#E2001A;font-size:2.4rem">ABB</div>
+    <div class="brand-tile rv" style="color:#005EB8">EATON</div>
+    <div class="brand-tile rv" style="color:#2f9e44">Schneider Electric</div>
+    <div class="brand-tile rv" style="color:#009999">SIEMENS</div>
+   </div>
   </div>
+ </section>
 
-  <!-- CARD 2 -->
-  <div class="card">
-    
-
-    <div class="card-images">
-      <img src="IMG_4642.PNG" alt="">
-      <img src="IMG_4643.PNG" alt="">
-      <img src="IMG_4644.PNG" alt="">
-      <img src="IMG_4645.PNG" alt="">
-    </div>
+ <section class="quote" id="preventivi">
+  <div class="wrap">
+   <div class="rv">
+    <h2>Chiedi un preventivo</h2>
+    <p class="lead">Descrivici il quadro che ti serve: tipo di impianto, potenza, numero di partenze. Ti rispondiamo il prima possibile.</p>
+    <p class="lead">Preferisci parlare? Chiama il <a href="tel:+393489880115">348 988 0115</a> o lo <a href="tel:+390933339855">0933 339855</a>.</p>
+   </div>
+   <form id="qf" class="rv">
+    <div class="f"><label for="n">Nome e cognome</label><input id="n" required autocomplete="name"></div>
+    <div class="f"><label for="t">Telefono</label><input id="t" type="tel" required autocomplete="tel"></div>
+    <div class="f full"><label for="e">Email</label><input id="e" type="email" required autocomplete="email"></div>
+    <div class="f full"><label for="k">Tipo di quadro</label><select id="k"><option>Quadro BT</option><option>Quadro automazione</option><option>Altro</option></select></div>
+    <div class="f full"><label for="m">Messaggio</label><textarea id="m" required></textarea></div>
+    <div class="full"><button class="btn btn-y" type="submit">Invia la richiesta</button></div>
+    <p class="ok" role="status"></p>
+   </form>
   </div>
+ </section>
 
-  <!-- CARD 3 -->
-  
+ <section id="contatti">
+  <div class="wrap">
+   <h2 class="rv">Contattaci</h2>
+   <div class="cgrid">
+    <div class="c rv"><h3>Cellulare</h3><a href="tel:+393489880115">348 988 0115</a></div>
+    <div class="c rv"><h3>Telefono fisso</h3><a href="tel:+390933339855">0933 339855</a></div>
+    <div class="c rv"><h3>Email</h3><a href="mailto:info.powerelectric7@gmail.com">info.powerelectric7@gmail.com</a></div>
+    <div class="c rv"><h3>PEC</h3><a href="mailto:gcpowerelectric@pec.it">gcpowerelectric@pec.it</a></div>
+    <div class="c rv"><h3>Sede</h3><p>Via Butera 205<br>Gela (CL)</p></div>
+    <div class="c rv"><h3>Sede produttiva</h3><p>Via Everest 1<br>Gela (CL)</p></div>
+   </div>
+  </div>
+ </section>
+</main>
 
+<main id="page-view" class="page" hidden>
+ <div class="wrap">
+  <p class="crumb"><a href="#home">Home</a> / <a href="#progetti">Progetti</a> / <span id="crumb"></span></p>
+  <h2 id="ptitle"></h2>
+  <p class="lead" id="pdesc"></p>
+  <div class="gal" id="gal"></div>
+  <a class="btn btn-b" href="#preventivi">Richiedi un preventivo</a>
+ </div>
+</main>
+
+<footer><div class="wrap"><span>© 2026 GC Power Electric – P.IVA 02175520853</span><span>Via Butera 205, Gela (CL)</span><span class="credit">Designed by Davide Mezzasalma</span></div></footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Galleria">
+ <button class="x" aria-label="Chiudi">×</button><button class="p" aria-label="Precedente">‹</button><button class="n" aria-label="Successiva">›</button>
+ <figure><div id="lbimg"></div><figcaption id="lbcap"></figcaption></figure>
 </div>
-</section>
 
-<section id="galleria" class="hidden">
-  <h3>I Nostri Lavori <i class="fa-solid fa-briefcase"></i></h3>
-  <p>Realizziamo quadri elettrici industriali su misura, progettati per garantire massima affidabilità, sicurezza e continuità operativa. Ogni impianto viene sviluppato partendo da un’attenta analisi delle esigenze del cliente, così da offrire soluzioni personalizzate e performanti.
-
-Nel corso del tempo abbiamo maturato esperienza nella realizzazione di sistemi per automazione e distribuzione elettrica, seguendo ogni fase del lavoro: dalla progettazione tecnica, al cablaggio, fino al collaudo finale.
-
-Ogni progetto viene eseguito con cura dei dettagli, utilizzo di componenti di qualità e rispetto delle normative vigenti, per assicurare impianti efficienti, sicuri e duraturi nel tempo.
-
-Il nostro obiettivo è fornire soluzioni che migliorino l’efficienza degli impianti e supportino la produttività dei nostri clienti, con un servizio serio, preciso e sempre orientato alla qualità.</p>
-
-  <div class="gallery">
-    <img src="quadro vuoto.jpeg">
-    <img src="quadro 2.jpeg">
-    <img src="quadro 1.jpeg">
-    <img src="quadro 4.jpeg">
-  </div>
-</section>
-
-<section id="preventivo" class="hidden">
-  <h3>Richiedi un Preventivo <i class="fa-solid fa-check"></i></h3>
-  <p>Hai bisogno di un intervento o di un quadro elettrico su misura?</p>
-
-  <button onclick="window.location.href='preventivo.html'">
-    Richiedi Preventivo
-  </button>
-</section>
-
-<section id="contatti-wrapper" class="hidden">
-
-  <div class="contact-box">
-    <h3>Contattaci</h3>
-    <p><strong>Cellulare:</strong> +39 3489880115</p>
-    <p><strong>Telefono Fisso:</strong> 0933 339855</p>
-    <p><strong>P. Iva:</strong> 02175520853</p>
-    <p><strong>Email:</strong> 
-  <a href="mailto:info.gcpowerelectric7@gmail.com">
-    info.gcpowerelectric7@gmail.com
-  </a>
-</p>
-    <p><strong>PEC:</strong> 
-  <a href="mailto:gcpowerelectric@pec.it">
-    gcpowerelectric@pec.it
-  </a>
-</p>
-    <p><strong>Indirizzo:</strong> Gela / Cl <br>Via Butera 205</p>
-    <p><strong>Sede Produttiva:</strong> Via Everest sn</p>
-  </div>
-
-  <div class="work-box" id="contatti">
-    <h3>Lavora con noi</h3>
-    <p>Se sei un professionista nel settore elettrico...</p>
-    <p><strong>Email:</strong> inserisci@email.it</p>
-
-    <button onclick="location.href='./candidatura.html'">
-  Invia candidatura
-</button>
-  </div>
-
-  <img src="mappa.jpg" id="mappa">
-
-</section>
-
-<footer>
-  <p>© 2026 GcPowerElectric<br><strong>Privacy Policy</strong> | Designed by <br>Davide Mezzasalma</p>
-
-  <a href="https://www.instagram.com/gcpower_electric?igsh=MW5kemtxc2R1em51Yw%3D%3D&utm_source=qr"
-     id="linkinsta"
-     target="_blank">
-
-    <i class="fa-brands fa-instagram"></i>
-
-    <a href="https://www.linkedin.com/in/giuseppe-li-pomi-528424419?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
-     id="linkinsta"
-     target="_blank">
-
-    <i class="fa-brands fa-linkedin"></i>
-  </a>
-</footer>
+<template data-page="quadri-bt" data-cover="FOTO/quadro-bt1.jpg">
+  <!-- Foto Quadri BT:-->
+   <img src="FOTO/quadro-bt1.jpg">
+   <img src="FOTO/quadro-bt2.jpg">
+   <img src="FOTO/quadro-bt3.jpg">
+</template>
+<template data-page="quadri-automazione" data-cover="FOTO/quadro-automazione1.jpeg">
+  <!-- Foto Quadri automazione:-->
+   <img src="FOTO/quadro-automazione1.jpeg">
+   <img src="FOTO/quadro-automazione2.jpeg">
+   <img src="FOTO/quadro-automazione3.jpeg">
+</template>
+<template data-page="quadri-comando-pompa" data-cover="FOTO/quadro-pompa-acceso.jpeg">
+  <!-- Foto Quadri comando pompa:-->
+   <img src="FOTO/foto-pompa1.jpg">
+   <img src="FOTO/foto-pompa2.jpg">
+   <img src="FOTO/foto-pompa3.jpg">
+</template>
 
 <script src="script.js"></script>
-
 </body>
 </html>
