@@ -2,7 +2,8 @@ const $=(s,c=document)=>c.querySelector(s),$$=(s,c=document)=>[...c.querySelecto
 const PAGES={
  'quadri-bt':{t:'Quadri BT',cover:'',d:'Quadri di distribuzione e protezione in bassa tensione per stabilimenti, cantieri e impianti industriali.',type:'bt',items:['Quadro generale BT','Quadro di distribuzione','Quadro di rifasamento','Quadro per cantiere','Sottoquadro di reparto','Quadro prese e forza motrice','Quadro con interruttori scatolati','Quadro di commutazione rete-gruppo']},
  'quadri-automazione':{t:'Quadri automazione',cover:'',d:'Quadri di comando e controllo per macchine e processi: PLC, inverter, pannelli operatore e I/O.',type:'auto',items:['Quadro con PLC','Quadro con inverter','Quadro di controllo pompe','Quadro con pannello operatore','Quadro per linea di produzione','Armadio I/O remoto','Quadro soft starter','Quadro di supervisione']},
- 'quadri-comando-pompa':{t:'Quadri comando pompa',cover:'',d:'Quadri per l’avviamento, la protezione e il controllo di pompe, impianti di sollevamento e impianti idrici.',type:'pump',items:['Quadro per pompa singola','Quadro per due pompe con alternanza','Quadro con avviamento stella-triangolo','Quadro con inverter per pompa','Quadro per elettropompe sommerse','Quadro antincendio','Quadro di sollevamento acque','Quadro con regolazione di livello']}
+ 'quadri-comando-pompa':{t:'Quadri comando pompa',cover:'',d:'Quadri per l’avviamento, la protezione e il controllo di pompe, impianti di sollevamento e impianti idrici.',type:'pump',items:['Quadro per pompa singola','Quadro per due pompe con alternanza','Quadro con avviamento stella-triangolo','Quadro con inverter per pompa','Quadro per elettropompe sommerse','Quadro antincendio','Quadro di sollevamento acque','Quadro con regolazione di livello']},
+ 'carpenteria':{t:'Carpenteria',cover:'',d:'Carpenteria metallica e involucri su misura per quadri elettrici: armadi, cassette e strutture lavorate secondo progetto.',type:'carp',items:['Armadio metallico su misura','Cassetta in lamiera','Carpenteria per quadro generale','Struttura con piastra di fondo','Armadio per esterno','Carpenteria in acciaio inox','Pannello con lavorazioni su misura','Basamento e zoccolo']}
 };
 /* Le foto si inseriscono in index.html (blocchi <template> in fondo al file). Qui vengono lette. */
 $$('template[data-page]').forEach(t=>{const p=PAGES[t.dataset.page];if(!p)return;const imgs=[...t.content.querySelectorAll('img')];if(imgs.length)p.items=imgs.map(i=>({t:i.getAttribute('alt')||p.t,src:i.getAttribute('src')}));if(t.dataset.cover)p.cover=t.dataset.cover});
@@ -12,7 +13,11 @@ function art(type,i){
  if(type==='bt'){
   for(let row=0;row<4;row++){s+=`<rect x="92" y="${48+row*50}" width="216" height="6" fill="#aab6c6"/>`;
    for(let c=0;c<7;c++){const on=r(row*7+c)>.3;s+=`<rect x="${94+c*30}" y="${58+row*50}" width="24" height="32" rx="2" fill="#2F3742"/><rect x="${100+c*30}" y="${64+row*50}" width="12" height="12" rx="1" fill="${on?'#F5B800':'#0B5FD0'}"/>`}}
- }else if(type==='pump'){
+ }else if(type==='carp'){
+  s+=`<rect x="92" y="46" width="216" height="22" fill="#fff"/><rect x="92" y="222" width="216" height="22" fill="#fff"/><rect x="92" y="124" width="216" height="8" fill="#aab6c6"/><rect x="92" y="200" width="216" height="8" fill="#aab6c6"/>`;
+  for(let c=0;c<14;c++)s+=`<rect x="${97+c*15}" y="52" width="9" height="10" fill="#cbd5e1"/><rect x="${97+c*15}" y="228" width="9" height="10" fill="#cbd5e1"/>`;
+  for(let y=0;y<4;y++)for(let x=0;x<10;x++)s+=`<circle cx="${108+x*20}" cy="${88+y*20+(y>1?30:0)}" r="3.5" fill="#8b98aa"/>`;
+}else if(type==='pump'){
   s+=`<circle cx="138" cy="88" r="36" fill="#fff" stroke="#2F3742" stroke-width="5"/><path d="M138 88l20-18" stroke="#E2001A" stroke-width="3.5" stroke-linecap="round"/><circle cx="138" cy="88" r="5" fill="#2F3742"/>`;
   for(let c=0;c<3;c++)s+=`<circle cx="${222+c*34}" cy="60" r="10" fill="${['#4ade80','#F5B800','#E2001A'][c]}"/><circle cx="${222+c*34}" cy="108" r="14" fill="#2F3742"/><rect x="${220+c*34}" y="96" width="4" height="13" fill="#F5B800"/>`;
   for(let c=0;c<4;c++)s+=`<rect x="${94+c*54}" y="146" width="46" height="58" rx="3" fill="#aab6c6"/><rect x="${94+c*54}" y="146" width="46" height="10" fill="#2F3742"/><circle cx="${117+c*54}" cy="180" r="9" fill="${c%2?'#F5B800':'#0B5FD0'}"/>`;
@@ -27,8 +32,8 @@ function art(type,i){
  }
  return s+'</svg>';
 }
-const COVER={bt:'quadri-bt',auto:'quadri-automazione',pump:'quadri-comando-pompa'};
-$$('[data-art]').forEach(el=>{const k=el.dataset.art,c=PAGES[COVER[k]].cover;el.outerHTML=c?`<img src="${c}" alt="">`:art(k,k==='bt'?2:5)});
+const COVER={bt:'quadri-bt',auto:'quadri-automazione',pump:'quadri-comando-pompa',carp:'carpenteria'};
+$$('[data-art]').forEach(el=>{const k=el.dataset.art,c=(PAGES[COVER[k]]||{}).cover;el.outerHTML=c?`<img src="${c}" alt="">`:art(k,k==='bt'?2:5)});
 let cur=[],idx=0;
 function show(k){const lb=$('#lb'),it=cur[k];idx=k;$('#lbimg').innerHTML=it.src?`<img src="${it.src}" alt="${it.t}">`:it.svg;$('#lbcap').textContent=it.t}
 function openLb(k){show(k);$('#lb').classList.add('on');$('#lb .x').focus()}
@@ -72,8 +77,9 @@ $$('#home-view .rv').forEach((el,i)=>{el.style.transitionDelay=(i%5)*70+'ms';io.
 $('#qf').onsubmit=e=>{e.preventDefault();
  const v=id=>$('#'+id).value.trim();
  const body=`Nome: ${v('n')}\nTelefono: ${v('t')}\nEmail: ${v('e')}\nTipo di quadro: ${v('k')}\n\n${v('m')}`;
- location.href=`mailto:info.powerelectric7@gmail.com?subject=${encodeURIComponent('Richiesta preventivo – '+v('k'))}&body=${encodeURIComponent(body)}`;
+ location.href=`mailto:info@gcpowerelectric7.com?subject=${encodeURIComponent('Richiesta preventivo – '+v('k'))}&body=${encodeURIComponent(body)}`;
  $('.ok').textContent='Si apre il tuo programma di posta con la richiesta già compilata: premi Invia per completarla.';
 };
 
 const hv=$('.hero-video');if(hv){hv.muted=true;if(matchMedia('(prefers-reduced-motion:reduce)').matches)hv.pause();else hv.play().catch(()=>{})}
+$$('#nav a').forEach(a=>a.addEventListener('click',()=>{$('#nav').classList.remove('open');$('.burger').setAttribute('aria-expanded','false')}));

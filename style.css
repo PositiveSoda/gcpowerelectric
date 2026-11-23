@@ -21,7 +21,7 @@ section{padding:96px 0}
 /* navbar */
 header{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:76px}
-.brand img{height:60px;width:60px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px var(--line)}
+.brand img{height:50px;width:50px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px var(--line)}
 nav ul{display:flex;gap:6px;list-style:none;margin:0;padding:0;align-items:center}
 nav a,nav .sub-btn{display:block;padding:10px 14px;text-decoration:none;font:600 1rem var(--body);color:var(--graphite);background:none;border:0;cursor:pointer;position:relative}
 nav li>a::after,nav .sub-btn::after{content:"";position:absolute;left:14px;right:14px;bottom:4px;height:2px;background:var(--yellow);transform:scaleX(0);transform-origin:left;transition:transform .3s}
@@ -42,7 +42,7 @@ nav .cta:hover{background:var(--blue-d)}nav .cta::after{display:none}
 /* hero */
 .hero{position:relative;overflow:hidden;background:var(--night);color:#fff;padding:150px 0 100px;min-height:100svh;display:flex;align-items:center}
 .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hero-shade{position:absolute;inset:0;background:linear-gradient(rgba(16,22,29,.7),rgba(16,22,29,.58) 50%,rgba(16,22,29,.78))}
+.hero-shade{position:absolute;inset:0;background:linear-gradient(rgba(16,22,29,.38),rgba(16,22,29,.26) 50%,rgba(16,22,29,.48))}
 .hero .wrap{position:relative;display:block;text-align:center}
 .hero h1{font-size:clamp(2.8rem,6.4vw,5.4rem);text-transform:none;max-width:18ch;margin-inline:auto}
 .hero p{font-size:1.2rem;color:#c3cddb;max-width:48ch;margin:22px auto 34px}
@@ -53,7 +53,7 @@ nav .cta:hover{background:var(--blue-d)}nav .cta::after{display:none}
 .hero p{animation-delay:.12s}.hero .btns{animation-delay:.24s}
 
 /* progetti */
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:48px}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:48px}
 .pcard{position:relative;display:block;text-decoration:none;border-radius:14px;overflow:hidden;background:var(--graphite);color:#fff;min-height:340px;transition:transform .4s,box-shadow .4s}
 .pcard:hover{transform:translateY(-6px);box-shadow:0 26px 50px rgba(24,32,42,.28)}
 .pcard svg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s}
@@ -111,9 +111,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .tile:hover span,.tile:focus-visible span{transform:none;opacity:1}
 .lb{position:fixed;inset:0;z-index:100;background:rgba(10,14,19,.94);display:grid;place-items:center;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
 .lb.on{opacity:1;visibility:visible}
-.lb figure{margin:0;width:min(900px,90vw);transform:scale(.94);transition:transform .35s}
+.lb figure{margin:0;width:min(900px,90vw);max-height:92vh;display:flex;flex-direction:column;align-items:center;transform:scale(.94);transition:transform .35s}
 .lb.on figure{transform:none}
-.lb figure>*:first-child{width:100%;border-radius:12px;background:#fff;max-height:70vh}
+#lbimg{width:100%;display:flex;justify-content:center}
+#lbimg img{width:auto;height:auto;max-width:100%;max-height:80vh;object-fit:contain;border-radius:12px}
+#lbimg svg{width:100%;max-height:72vh;border-radius:12px;background:#fff}
 .lb figcaption{color:#fff;margin-top:14px;text-align:center}
 .lb button{position:absolute;background:rgba(255,255,255,.12);color:#fff;border:0;width:52px;height:52px;border-radius:50%;font-size:1.6rem;cursor:pointer;transition:background .25s}
 .lb button:hover{background:var(--blue)}
@@ -142,7 +144,7 @@ body,header{transition:background-color .4s,color .4s}
 [data-theme="dark"] .brand-tile:first-child{color:#e6ecf4!important}
 [data-theme="dark"] .tile{background:#18202a}
 [data-theme="dark"] footer{border-top:1px solid #222c38}
-[data-theme="dark"] nav{background:#10161d}
+@media(max-width:960px){[data-theme="dark"] nav{background:#10161d}}
 
 @media(max-width:960px){
 .burger{display:block}
@@ -170,3 +172,21 @@ section{padding:70px 0}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
 
 .credit{width:100%;text-align:center;margin-top:6px;padding-top:16px;border-top:1px solid #222c38;color:#7d8a9b}
+
+/* Logo navbar spostato a sinistra (cambia 160px per spostarlo di piu o di meno) */
+.brand{margin-left:calc(-1 * clamp(0px, (100vw - 1160px) / 2 - 24px, 140px))}
+
+/* Menu e pulsante dark mode spostati a destra (cambia 160px per spostarli di piu o di meno) */
+@media(min-width:961px){.theme{margin-right:calc(-1 * clamp(0px, (100vw - 1160px) / 2 - 24px, 160px))}}
+
+.hero h1,.hero p{text-shadow:0 2px 20px rgba(0,0,0,.6)}
+
+/* Menu mobile: il blur della barra impediva al menu a schermo intero di apparire */
+@media(max-width:960px){
+header{-webkit-backdrop-filter:none;backdrop-filter:none;background:#fff}
+[data-theme="dark"] header{background:#10161d}
+}
+
+@media(max-width:960px){
+  .hero{padding-top:100px;padding-bottom:220px}
+}
