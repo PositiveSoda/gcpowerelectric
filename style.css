@@ -188,5 +188,5 @@ header{-webkit-backdrop-filter:none;backdrop-filter:none;background:#fff}
 }
 
 @media(max-width:960px){
-  .hero{padding-top:100px;padding-bottom:280px}
+  .hero{padding-top:100px;padding-bottom:300px}
 }
