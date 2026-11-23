@@ -61,7 +61,7 @@ function route(){
 addEventListener('hashchange',route);route();
 
 const tb=$('.theme'),root=document.documentElement;
-function setTheme(d,save){d?root.setAttribute('data-theme','dark'):root.removeAttribute('data-theme');tb.setAttribute('aria-pressed',d);tb.setAttribute('aria-label',d?'Passa alla modalità chiara':'Passa alla modalità scura');if(save){try{localStorage.setItem('gc-theme',d?'dark':'light')}catch(e){}}}
+function setTheme(d,save){d?root.setAttribute('data-theme','dark'):root.removeAttribute('data-theme');tb.setAttribute('aria-pressed',d);tb.setAttribute('aria-label',d?'Passa alla modalità chiara':'Passa alla modalità scura')}
 setTheme(root.getAttribute('data-theme')==='dark');
 tb.onclick=()=>setTheme(root.getAttribute('data-theme')!=='dark',true);
 $('.burger').onclick=e=>{const o=$('#nav').classList.toggle('open');e.currentTarget.setAttribute('aria-expanded',o)};

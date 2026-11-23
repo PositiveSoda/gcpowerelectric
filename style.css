@@ -75,7 +75,7 @@ nav .cta:hover{background:var(--blue-d)}nav .cta::after{display:none}
 
 /* brand */
 .brands{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:44px}
-.brand-tile{height:120px;border:1px solid var(--line);border-radius:12px;display:grid;place-items:center;font:700 1.9rem var(--head);letter-spacing:.5px;transition:transform .3s,box-shadow .3s,border-color .3s}
+.brand-tile{height:120px;border:1px solid var(--line);border-radius:12px;display:grid;place-items:center;font:700 1.7rem var(--head);letter-spacing:.5px;transition:transform .3s,box-shadow .3s,border-color .3s}
 .brand-tile:hover{transform:translateY(-5px);box-shadow:0 16px 30px rgba(24,32,42,.12);border-color:var(--blue)}
 
 /* preventivi */
@@ -194,3 +194,12 @@ header{-webkit-backdrop-filter:none;backdrop-filter:none;background:#fff}
 @media(max-width:960px){
   .hero{min-height:auto;padding:90px 0 60px}
 }
+
+a.c{display:block;text-decoration:none;cursor:pointer}
+a.c:hover{box-shadow:0 14px 30px rgba(11,95,208,.15)}
+.maplink{display:inline-block;margin-top:12px;color:var(--blue);font-weight:600;transition:transform .3s}
+a.c:hover .maplink{transform:translateX(6px)}
+[data-theme="dark"] .maplink{color:#6aa5ff}
+
+.c h3{display:flex;align-items:center;gap:10px}
+.c h3 svg{width:22px;height:22px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
