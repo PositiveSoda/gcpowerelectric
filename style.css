@@ -203,3 +203,13 @@ a.c:hover .maplink{transform:translateX(6px)}
 
 .c h3{display:flex;align-items:center;gap:10px}
 .c h3 svg{width:22px;height:22px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+
+.bgfx{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+.bgfx .tr{fill:none;stroke:rgba(11,95,208,.16);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+[data-theme="dark"] .bgfx .tr{stroke:rgba(70,130,220,.24)}
+.bgfx .pl{fill:none;stroke:var(--yellow);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:60 940;opacity:.8;animation:flow 7s linear infinite}
+@keyframes flow{from{stroke-dashoffset:0}to{stroke-dashoffset:-1000}}
+.about{background:rgba(242,245,249,.85)}
+[data-theme="dark"] .about{background:rgba(24,32,42,.82)}
+.quote{background:rgba(24,32,42,.9)}
