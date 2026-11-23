@@ -163,6 +163,10 @@ nav .cta{margin:16px 0 0;text-align:center;border-bottom:0}
 .brands{grid-template-columns:repeat(2,1fr)}
 .cgrid,.gal{grid-template-columns:1fr 1fr}
 section{padding:70px 0}
+.hero h1 {
+    font-size: 2.5rem;
+    line-height: 1.1;
+}
 }
 @media(max-width:620px){
 .cards,.cgrid,.gal,form{grid-template-columns:1fr}
@@ -188,5 +192,5 @@ header{-webkit-backdrop-filter:none;backdrop-filter:none;background:#fff}
 }
 
 @media(max-width:960px){
-  .hero{min-height:auto;padding:90px 0 20px}
+  .hero{min-height:auto;padding:90px 0 60px}
 }
