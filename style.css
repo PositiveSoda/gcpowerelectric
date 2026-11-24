@@ -205,11 +205,22 @@ a.c:hover .maplink{transform:translateX(6px)}
 .c h3 svg{width:22px;height:22px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 
 
-.bgfx{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
-.bgfx .tr{fill:none;stroke:rgba(11,95,208,.16);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-[data-theme="dark"] .bgfx .tr{stroke:rgba(70,130,220,.24)}
-.bgfx .pl{fill:none;stroke:var(--yellow);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:60 940;opacity:.8;animation:flow 7s linear infinite}
-@keyframes flow{from{stroke-dashoffset:0}to{stroke-dashoffset:-1000}}
-.about{background:rgba(242,245,249,.85)}
-[data-theme="dark"] .about{background:rgba(24,32,42,.82)}
-.quote{background:rgba(24,32,42,.9)}
+.bgfx{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.bgfx i{position:absolute;border-radius:50%;filter:blur(90px);will-change:transform}
+.bgfx .o1{width:55vmax;height:55vmax;left:-15vmax;top:-10vmax;background:radial-gradient(circle,#0B5FD0,transparent 65%);opacity:.2;animation:drift1 22s ease-in-out infinite alternate}
+.bgfx .o2{width:45vmax;height:45vmax;right:-12vmax;top:20vh;background:radial-gradient(circle,#F5B800,transparent 65%);opacity:.16;animation:drift2 26s ease-in-out infinite alternate}
+.bgfx .o3{width:50vmax;height:50vmax;left:20vw;bottom:-25vmax;background:radial-gradient(circle,#2563eb,transparent 65%);opacity:.18;animation:drift3 30s ease-in-out infinite alternate}
+[data-theme="dark"] .bgfx .o1{opacity:.5}
+[data-theme="dark"] .bgfx .o2{opacity:.22}
+[data-theme="dark"] .bgfx .o3{opacity:.45}
+.bgfx .grid{position:absolute;inset:0;background-image:linear-gradient(rgba(11,95,208,.1) 1px,transparent 1px),linear-gradient(90deg,rgba(11,95,208,.1) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse at center,#000 30%,transparent 80%);mask-image:radial-gradient(ellipse at center,#000 30%,transparent 80%);animation:gridmove 40s linear infinite}
+[data-theme="dark"] .bgfx .grid{background-image:linear-gradient(rgba(120,170,255,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(120,170,255,.09) 1px,transparent 1px)}
+.bgfx .beam{position:absolute;top:-20%;left:-40%;width:40%;height:140%;background:linear-gradient(100deg,transparent,rgba(245,184,0,.10),transparent);transform:skewX(-20deg);animation:beam 16s ease-in-out infinite}
+@keyframes drift1{to{transform:translate(18vmax,14vmax) scale(1.15)}}
+@keyframes drift2{to{transform:translate(-16vmax,-10vmax) scale(1.2)}}
+@keyframes drift3{to{transform:translate(-12vmax,-14vmax) scale(.9)}}
+@keyframes gridmove{to{background-position:56px 56px}}
+@keyframes beam{0%{transform:translateX(0) skewX(-20deg)}60%,100%{transform:translateX(420%) skewX(-20deg)}}
+.about{background:rgba(242,245,249,.55)}
+[data-theme="dark"] .about{background:rgba(24,32,42,.5)}
+.quote{background:rgba(24,32,42,.82)}

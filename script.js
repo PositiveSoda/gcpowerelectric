@@ -83,3 +83,41 @@ $('#qf').onsubmit=e=>{e.preventDefault();
 
 const hv=$('.hero-video');if(hv){hv.muted=true;if(matchMedia('(prefers-reduced-motion:reduce)').matches)hv.pause();else hv.play().catch(()=>{})}
 $$('#nav a').forEach(a=>a.addEventListener('click',()=>{$('#nav').classList.remove('open');$('.burger').setAttribute('aria-expanded','false')}));
+
+
+(function(){
+ const cv=$('.bgfx');
+ if(!cv||!cv.getContext||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+ const ctx=cv.getContext('2d');let W=0,H=0,pts=[],pulses=[];
+ function size(){
+  const d=Math.min(devicePixelRatio||1,2);
+  W=innerWidth;H=innerHeight;cv.width=W*d;cv.height=H*d;ctx.setTransform(d,0,0,d,0,0);
+  const n=Math.min(70,Math.round(W*H/20000));
+  pts=Array.from({length:n},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3}));
+ }
+ const dark=()=>document.documentElement.getAttribute('data-theme')==='dark';
+ function frame(){
+  ctx.clearRect(0,0,W,H);
+  const col=dark()?'112,165,255':'11,95,208',max=150;
+  for(const p of pts){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1}
+  for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){
+   const a=pts[i],b=pts[j],dist=Math.hypot(a.x-b.x,a.y-b.y);
+   if(dist<max){
+    ctx.strokeStyle=`rgba(${col},${(1-dist/max)*(dark()?.35:.22)})`;ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();
+    if(Math.random()<.0002&&pulses.length<8)pulses.push({a,b,t:0});
+   }
+  }
+  ctx.fillStyle=`rgba(${col},.5)`;
+  for(const p of pts){ctx.beginPath();ctx.arc(p.x,p.y,2,0,6.283);ctx.fill()}
+  pulses=pulses.filter(u=>u.t<1);
+  for(const u of pulses){
+   u.t+=.02;const x=u.a.x+(u.b.x-u.a.x)*u.t,y=u.a.y+(u.b.y-u.a.y)*u.t;
+   const g=ctx.createRadialGradient(x,y,0,x,y,12);
+   g.addColorStop(0,'rgba(245,184,0,.95)');g.addColorStop(1,'rgba(245,184,0,0)');
+   ctx.fillStyle=g;ctx.beginPath();ctx.arc(x,y,12,0,6.283);ctx.fill();
+  }
+  requestAnimationFrame(frame);
+ }
+ size();addEventListener('resize',size);frame();
+})();
